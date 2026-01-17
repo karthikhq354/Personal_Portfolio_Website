@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Karthik Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="script.js"></script>
+
+  <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes float3d {
+      0%, 100% {
+        transform: translateZ(0) translateY(0) scale(1);
+        opacity: 0.4;
+      }
+      50% {
+        transform: translateZ(40px) translateY(-10px) scale(1.15);
+        opacity: 0.8;
+      }
+    }
+  </style>
+</head>
+
+<body class=" bg-gray-900 text-gray-100 scroll-smooth ">
+
+<!-- Navbar -->
+<nav id="navbar"
+  class="sticky w-full top-0 z-50 transition-all duration-300
+         bg-gray-800/50
+         backdrop-blur-lg border-b border-cyan-400/20">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+     <div class="flex-shrink-0">
+                    <a href="#home" class="text-xl font-bold text-indigo-400">
+                        KARTHIK
+                    </a>
+                </div>
+
+    <!-- Desktop Menu -->
+  <ul class="hidden md:flex space-x-8">
+    <li><a href="#home" class="nav-link relative transition text-white hover:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full">Home</a></li>
+    <li><a href="#about" class="nav-link relative transition text-white hover:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full">About</a></li>
+    <li><a href="#skills" class="nav-link relative transition text-white hover:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full">Skills</a></li>
+    <li><a href="#projects" class="nav-link relative transition text-white hover:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full">Projects</a></li>
+    <li><a href="#contact" class="nav-link relative transition text-white hover:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full">Contact</a></li>
+  </ul>
+
+
+    <!-- Hamburger -->
+    <button id="menu-btn" class="md:hidden flex flex-col space-y-1">
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+    <ul class="flex flex-col items-center space-y-6 py-6">
+  
+      <li><a href="#home" class="relative text-white transition active:text-cyan-400 focus-visible:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-cyan-400 after:transition-all after:duration-200 active:after:w-full focus-visible:after:w-full"> Home</a></li>
+      <li><a href="#about" class="relative text-white transition active:text-cyan-400 focus-visible:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-cyan-400 after:transition-all after:duration-200 active:after:w-full focus-visible:after:w-full"> About </a></li>
+      <li><a href="#skills" class="relative text-white transition active:text-cyan-400 focus-visible:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-cyan-400 after:transition-all after:duration-200 active:after:w-full focus-visible:after:w-full"> Skills </a></li>
+      <li><a href="#projects" class="relative text-white transition active:text-cyan-400 focus-visible:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-cyan-400 after:transition-all after:duration-200 active:after:w-full focus-visible:after:w-full"> Projects </a></li>
+      <li><a href="#contact" class="relative text-white transition active:text-cyan-400 focus-visible:text-cyan-400 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-cyan-400 after:transition-all after:duration-200 active:after:w-full focus-visible:after:w-full"> Contact </a></li>
+    </ul>
+  </div>
+
+
+</nav>
+
+<!-- Hero -->
+<section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 overflow-hidden">
+
+  <div class="relative z-10 flex flex-col md:flex-row items-center gap-16 md:gap-32 lg:gap-40 px-6 md:px-16 reveal">
+
+    <div class="text-center md:text-left max-w-xl reveal">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        Hi, I'm <span class="text-cyan-400">Karthik</span> 👋
+      </h1>
+
+      <p class="text-xl md:text-2xl text-gray-300 mb-8 reveal">
+        <span id="typing-text"></span>
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start reveal">
+        <a
+          href="https://drive.google.com/file/d/1K04IUI8GBx5e5hlkemrENXX5sz2RlFAs/view?usp=sharing"
+          download
+          class="px-7 py-3 bg-indigo-600 rounded-full font-semibold hover:bg-indigo-700 hover:scale-105 transition shadow-lg text-center">
+          Download CV
+        </a>
+
+        <a
+          href="#contact"
+          class="px-7 py-3 border border-cyan-400 text-cyan-400 rounded-full font-semibold hover:bg-cyan-400 hover:text-gray-900 hover:scale-105 transition shadow-lg text-center">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+
+    <div class="relative group">
+      <div class="absolute inset-0 rounded-full bg-cyan-500 blur-3xl opacity-40 group-hover:opacity-70 transition"></div>
+      <img
+        src="./asset/prot1.jpeg"
+        alt="Profile"
+        class="relative w-56 h-56 rounded-full border-4 border-cyan-400 object-cover shadow-2xl group-hover:scale-105 transition duration-300">
+    </div>
+
+  </div>
+  <!-- Scroll Indicator (FIXED) -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 reveal">
+    <a href="#about" class="text-gray-400 hover:text-white transition-colors">
+      <i class="fas fa-chevron-down text-2xl animate-bounce"></i>
+    </a>
+  </div>
+
+</section>
+
+<!-- About -->
+<section id="about" class="min-h-screen flex items-center justify-center px-6 reveal">
+  <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal">
+    
+    <!-- Left Content -->
+    <div>
+      <h2 class="text-4xl font-bold text-indigo-600 mb-6">About Me</h2>
+      <p class="text-white/90 leading-relaxed mb-6">
+        Hi! I’m a passionate <strong>Front-End Developer</strong> specializing in building responsive, user-friendly web applications.
+        I craft engaging digital experiences with modern technologies like <em>HTML, CSS, JavaScript, and Tailwind CSS</em>.
+      </p>
+      <p class="text-lg leading-relaxed">
+        I love exploring new technologies, enhancing coding skills, and
+        contributing to open-source projects.
+      </p>
+      <p class="text-lg leading-relaxed">
+        My focus is on clean, maintainable code, pixel-perfect designs, and seamless performance. I’m constantly learning and improving to stay up-to-date with the latest industry trends.
+      </p>
+      <a href="#projects" class="inline-block mt-4 px-6 py-3 bg-indigo-500 rounded-full hover:bg-indigo-600 transition shadow-lg">
+        View My Projects
+      </a>
+    </div>
+
+    <!-- Right Card -->
+    <div class="relative perspective-[1000px]">
+      <div class="relative rounded-3xl p-10 text-white shadow-2xl bg-gray-800 overflow-hidden">
+         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+    <h3 class="text-xl font-semibold text-white">
+      C Programming (Hands-on)
+    </h3>
+    <span class="text-sm text-cyan-400 font-medium">
+      Skillrack • Aug 2025
+    </span>
+  </div>
+
+  <!-- Divider -->
+  <div class="w-16 h-1 bg-cyan-400 rounded mb-4"></div>
+
+  <!-- Content -->
+  <ul class="space-y-3 text-gray-300 text-sm leading-relaxed reveal text-left">
+    <li class="flex gap-2">
+      <span class="text-cyan-400">▹</span>
+      Solved <span class="text-white font-medium">350+</span> coding problems covering data types, loops, conditionals, functions, arrays, pointers, and file handling.
+    </li>
+    <li class="flex gap-2 ">
+       <a href="https://www.skillrack.com/faces/free/certificate.xhtml?t=cert&id=583114&key=GMA"
+     target="_blank"
+     class="inline-flex items-center gap-2 px-6 py-2
+            border border-indigo-600
+            rounded-full text-sm font-semibold
+            hover:bg-indigo-600
+            transition shadow-md">
+    View Certificate
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+    </svg>
+  </a>
+  </ul>
+
+        <!-- Animated Logos -->
+        <div class="absolute top-6 right-8 text-6xl font-bold text-white"
+             style="animation: float3d 3s ease-in-out infinite;">
+          <img src="https://img.icons8.com/color/48/000000/c-programming.png"
+             class="w-12 h-12 mx-auto mb-4" alt="C">
+      </div>
+        </div>
+
+        <div class="absolute bottom-10 left-8 text-4xl"
+             style="animation: float3d 3.5s ease-in-out infinite;">
+          
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="mx-auto mb-3 w-12 h-12"/>
+        </div>
+
+        <div class="absolute bottom-10 right-10 text-4xl"
+             style="animation: float3d 4s ease-in-out infinite;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+             class="w-12 h-12 mx-auto mb-4" alt="Python">
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-24 bg-gray-800">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-3xl font-bold text-center text-indigo-400 mb-12 reveal">
+      Skills
+    </h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+
+       <!-- Skill Card: C -->
+      <div class="bg-gray-700 rounded-xl p-6 text-center reveal
+                  hover:-translate-y-2 hover:shadow-lg hover:shadow-blue-600/30 transition">
+        <img src="https://img.icons8.com/color/48/000000/c-programming.png"
+             class="w-12 h-12 mx-auto mb-4" alt="C">
+        <h3 class="font-semibold">C</h3>
+      </div>
+
+      <!-- Skill Card: Python -->
+      <div class="bg-gray-700 rounded-xl p-6 text-center reveal
+                  hover:-translate-y-2 hover:shadow-lg hover:shadow-yellow-500/30 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+             class="w-12 h-12 mx-auto mb-4" alt="Python">
+        <h3 class="font-semibold">Python</h3>
+      </div>
+
+      <!-- Skill Card: HTML -->
+      <div class="bg-gray-700 rounded-xl p-6 text-center reveal
+                  hover:-translate-y-2 hover:shadow-lg hover:shadow-indigo-500/30 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+             class="w-12 h-12 mx-auto mb-4" alt="HTML">
+        <h3 class="font-semibold">HTML</h3>
+      </div>
+
+      <!-- Skill Card: Tailwind CSS -->
+      <div class="bg-gray-700 rounded-xl p-6 text-center reveal
+                  hover:-translate-y-2 hover:shadow-lg hover:shadow-cyan-400/30 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+             class="w-12 h-12 mx-auto mb-4" alt="Tailwind CSS">
+        <h3 class="font-semibold">Tailwind CSS</h3>
+      </div>
+     
+      <!-- Skill Card: JavaScript -->
+      <div class="bg-gray-700 rounded-xl p-6 text-center reveal
+                  hover:-translate-y-2 hover:shadow-lg hover:shadow-yellow-400/30 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+             class="w-12 h-12 mx-auto mb-4" alt="JavaScript">
+        <h3 class="font-semibold">JavaScript</h3>
+      </div>
+
+      <!-- Skill Card: React -->
+      <div class="bg-gray-700 rounded-xl p-6 text-center reveal
+                  hover:-translate-y-2 hover:shadow-lg hover:shadow-blue-500/30 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+             class="w-12 h-12 mx-auto mb-4" alt="React">
+        <h3 class="font-semibold">React</h3>
+      </div>
+
+      <!-- Skill Card: Node.js -->
+      <div class="bg-gray-700 rounded-xl p-6 text-center reveal
+                  hover:-translate-y-2 hover:shadow-lg hover:shadow-purple-500/30 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-12 h-12 mx-auto mb-4"
+          alt="PHP">
+        <h3 class="font-semibold">PHP</h3>
+      </div>
+
+      <!-- Skill Card: MySQL -->
+      <div class="bg-gray-700 rounded-xl p-6 text-center reveal
+                  hover:-translate-y-2 hover:shadow-lg hover:shadow-blue-700/30 transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+             class="w-12 h-12 mx-auto mb-4" alt="MySQL">
+        <h3 class="font-semibold">MySQL</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="min-h-screen bg-gray-900 text-white px-6 py-24">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Section Heading -->
+    <h2 class="text-4xl font-bold text-indigo-400 text-center mb-12 reveal opacity-0 translate-y-10 transition-transform duration-700">
+      My Projects
+    </h2>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Project Card -->
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-2xl reveal opacity-0 translate-y-10 duration-700">
+        <img src="https://plus.unsplash.com/premium_photo-1661589080018-ae9c05808bb2?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 1" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Employee Management System</h3>
+          <p class="text-gray-300 mb-4">A web application to efficiently manage employee records. Features include adding, updating, and deleting employees, searching and filtering records, and role-based access for secure management.</p>
+
+           <div class="flex flex-wrap gap-2 mb-4">
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">HTML</span>
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">CSS</span>
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">JavaScript</span>
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">AJAX</span>
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">PHP</span>
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">MySQL</span>
+            </div>
+          <a href="https://github.com/karthikhq354/Employee-Record-Management-System-Project.git" class="inline-block px-4 py-2 bg-indigo-500 rounded-full hover:bg-indigo-600 transition shadow">View Project</a>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-2xl reveal opacity-0 translate-y-10 duration-700">
+        <img src="https://media.istockphoto.com/id/1452909138/photo/movie-tickets-online-booking-app.jpg?s=612x612&w=0&k=20&c=9M3Il7Ju9fKvVfWK2W3pj57dCHi4qAkTxCSERU6oVJE=" alt="Project 2" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Movie Ticket Booking System</h3>
+          <p class="text-gray-300 mb-4">A dynamic web application for booking movie tickets online. Users can browse movies, select showtimes, choose seats, and confirm bookings. Built with PHP for backend processing, MySQL for database management.</p>
+           <div class="flex flex-wrap gap-2 mb-4">
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">HTML</span>
+                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">CSS</span>
+                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">JavaScript</span>
+                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">AJAX</span>
+                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">PHP</span>
+                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">MySQL</span>
+            </div>
+          <a href="https://github.com/karthikhq354/OnlineMovieTicketBS-PHP.git" class="inline-block px-4 py-2 bg-indigo-500 rounded-full hover:bg-indigo-600 transition shadow">View Project</a>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-2xl reveal opacity-0 translate-y-10 duration-700">
+        <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c29jYWlsJTIwbWVkaWF8ZW58MHx8MHx8fDA%3D" alt="Project 3" class="w-full h-48 object-cover ">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Social Media Website</h3>
+          <p class="text-gray-300 mb-4">A full-featured social media platform where users can create accounts, post updates, follow others, like and comment on posts, and manage their profiles. Built with Django for backend and authentication.</p>
+           <div class="flex flex-wrap gap-2 mb-4">
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">HTML</span>
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">TailwindCSS</span>
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">JavaScript</span>
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Python</span>
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Django</span>
+               <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">MySQL</span>
+            </div>
+          <a href="https://github.com/karthikhq354/SocialStarter-main" class="inline-block px-4 py-2 bg-indigo-500 rounded-full hover:bg-indigo-600 transition shadow">View Project</a>
+        </div>
+      </div>
+
+      <!-- Add more project cards as needed -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="min-h-screen flex items-center justify-center bg-gray-800 px-4 sm:px-6">
+
+  <div class="w-full max-w-2xl text-center reveal">
+
+    <!-- Heading -->
+    <h2 class="text-4xl font-bold text-indigo-400 mb-2 reveal">
+      Get in Touch
+    </h2>
+    <p class="text-gray-600 mb-10 reveal">
+      Send me a message directly:
+    </p>
+
+    <!-- Form -->
+    <form action="mailto:karthiksami354@gmail.com" method="post" enctype="text/plain"
+      class="max-w-xl mx-auto flex flex-col gap-6 reveal">
+
+      <input type="text" name="Name" placeholder="Your Name" class="p-4 rounded-3xl bg-gray-700 border-0 border-gray-300 focus:ring-2 focus:ring-indigo-500 shadow-md focus:shadow-lg transition-all duration-300 w-full sm:text-base text-sm" required>
+      <input type="email" name="Email" placeholder="Your Email" class="p-4 rounded-3xl bg-gray-700 border-0 border-gray-300 focus:ring-2 focus:ring-indigo-500 shadow-md focus:shadow-lg transition-all duration-300 w-full sm:text-base text-sm" required>
+      <textarea name="Message" rows="5" placeholder="Your Message" class="p-4 rounded-3xl bg-gray-700 border-0 border-gray-300 focus:ring-2 focus:ring-indigo-500 shadow-md focus:shadow-lg transition-all duration-300 w-full sm:text-base text-sm" required></textarea>
+      <button type="submit" class="bg-indigo-600 text-white font-bold px-6 py-3 rounded-full hover:bg-indigo-700 transition-all duration-300 w-full sm:w-auto">
+        Send Message
+      </button>
+
+    </form>
+  </div>
+</section>
+
+<!-- <footer -->
+<footer class="text-gray-400">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <!-- Top Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <!-- Brand Section -->
+      <div>
+        <h2 class="flex items-center text-xl font-semibold text-white mb-4">
+          Karthik
+        </h2>
+        <div class="text-sm leading-relaxed max-w-sm space-y-3 text-gray-300">
+          <div class="text-sm leading-relaxed max-w-sm space-y-3 text-gray-300">
+            <p class="flex items-center space-x-3 hover:text-cyan-400 transition-colors duration-300 cursor-pointer"><i class="fa-solid fa-phone w-5"></i><span>+91 6381642651</span></p>
+            <p class="flex items-center space-x-3 hover:text-cyan-400 transition-colors duration-300 cursor-pointer"><i class="fa-solid fa-envelope w-5"></i><span>karthiksami354@gmail.com</span></p>
+            <p class="flex items-center space-x-3 hover:text-cyan-400 transition-colors duration-300 cursor-pointer"><i class="fa-solid fa-location-dot w-5"></i><span>Puducherry</span></p>
+          </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mt-6">
+          <a href="https://github.com/karthikhq354" class="hover:text-cyan-400 transition text-2xl"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/karthik354/" class="hover:text-cyan-400 transition text-2xl"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/_k.a.r.t.h.i.k_354?igsh=MWh2am9ubTh4NTZ5NA==" class="hover:text-cyan-400 transition text-2xl"><i class="fab fa-instagram"></i></a>
+          </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="#home" class="hover:text-cyan-400 transition">Home</a></li>
+          <li><a href="#about" class="hover:text-cyan-400 transition">About</a></li>
+          <li><a href="#skills" class="hover:text-cyan-400 transition">Skills</a></li>
+          <li><a href="#projects" class="hover:text-cyan-400 transition">Projects</a></li>
+          <li><a href="#contact" class="hover:text-cyan-400 transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Featured Projects -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Featured Projects</h3>
+        <ul class="space-y-3">
+          <li><a href="#projects" class="hover:text-cyan-400 transition">Employee Management System</a></li>
+          <li><a href="#projects" class="hover:text-cyan-400 transition">Movie Ticket Booking System</a></li>
+          <li><a href="#projects" class="hover:text-cyan-400 transition">Social Media Website</a></li>
+          <li><a href="#projects" class="hover:text-cyan-400 transition">Personal Portfolio</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-white/10 mt-12 pt-10 text-center text-gray-400 ">
+      <p>© 2026 KARTHIK. All rights reserved.</p>
+    </div>
+
+  </div>
+
+  <!-- Scroll To Top -->
+<button id="scrollTopBtn"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    class="fixed bottom-6 right-6 bg-gray-800 hover:bg-gray-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition hidden">
+    <i class="fas fa-chevron-up text-2xl"></i>
+</button>
+
+</footer>
+
+
+</body>
+</html>
